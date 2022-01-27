@@ -12,14 +12,15 @@ namespace UseGymData
         {
             List<GymData> memberList = new List<GymData>();
             Console.WriteLine("Hello World!");
-            GymData gymData = new GymData(1);
-            gymData.HeightCm = 165;
-            gymData.MassKg = 60;
+            GymData gymData = new GymData(3);
+            gymData.HeightCm = 150;
+            gymData.MassKg = 30;
             memberList.Add(gymData);
-            TextWriter textWriter = new StreamWriter("MemberData.txt", true);
+            TextWriter textWriter = new StreamWriter("MemberData.txt",true);//Data written now will be appended
+           // textWriter.WriteLine("Member ID\tBMI\tHeight cm\tWeight kg"); Only needed when initialising the file
             foreach(GymData g in memberList)
             {
-                textWriter.Write(g.BodyMassIndex + "\t" + g.HeightCm + "\t" + g.MassKg);
+                textWriter.WriteLine(g.IDNumber + "\t" + g.BodyMassIndex + "\t" + g.HeightCm + "\t" + g.MassKg);
             }
             textWriter.Close();
             Console.WriteLine("Gym member has BMI " +  gymData.BodyMassIndex);

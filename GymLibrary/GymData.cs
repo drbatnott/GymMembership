@@ -66,6 +66,10 @@ namespace GymLibrary
             get { return heightCm; }
         }
 
+        public int IDNumber
+        {
+            get { return idNumber; }
+        }
         public float MassKg
         {
             set
