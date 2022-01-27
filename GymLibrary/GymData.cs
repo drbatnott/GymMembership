@@ -35,6 +35,7 @@ namespace GymLibrary
 
         private float CalculateBMI(float hM)
         {
+            //Console.WriteLine("Height in metres " + hM);
             float bmi = massKg / (hM * hM);
             return bmi;
         }
@@ -55,10 +56,11 @@ namespace GymLibrary
             set
             {
                 heightCm = value;
+                //Console.WriteLine(heightCm);
                 if (massKg != -1)
                 {
                     float heightM = heightCm / 100f;
-                    CalculateBMI(heightM);
+                    bodyMassIndex = CalculateBMI(heightM);
                 }
             }
             get { return heightCm; }
@@ -69,10 +71,11 @@ namespace GymLibrary
             set
             {
                 massKg = value;
+                //Console.WriteLine(heightCm);
                 if(heightCm != -1)
                 {
                     float heightM = heightCm / 100f;
-                    CalculateBMI(heightM);
+                    bodyMassIndex = CalculateBMI(heightM);
                 }
             }
             get { return massKg; }
